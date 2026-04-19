@@ -1,4 +1,4 @@
-<section id="menu" class="relative py-32 px-6 overflow-hidden">
+<section id="menu" class="relative py-12 px-6 overflow-hidden">
 
     <div class="absolute top-0 left-0 right-0 h-px opacity-20"
          style="background: linear-gradient(to right, transparent, #c8a97e, transparent)"></div>
@@ -12,15 +12,23 @@
         {{-- Header --}}
         <div class="flex flex-col md:flex-row justify-between md:items-end gap-6 mb-16">
             <div>
-                <span class="font-mono-grind text-[0.7rem] tracking-[0.3em] text-[#c8a97e] uppercase">The Menu</span>
-                <h2 class="font-display text-[clamp(2.5rem,5vw,4rem)] font-black text-[#f5f0e8] leading-none mt-3">
-                    Sip <em class="text-[#c8a97e]">better.</em>
+                <span class="font-mono-grind text-[0.7rem] tracking-[0.3em] text-grind-primary uppercase">The Menu</span>
+                <h2 class="font-display text-[clamp(2.5rem,5vw,4rem)] font-black text-grind-muted leading-none mt-3">
+                    Sip <em class="text-grind-primary">better.</em>
                 </h2>
             </div>
-            <a href="#contact"
-               class="self-start md:self-auto font-mono-grind text-[0.7rem] tracking-wider text-[#c8a97e] no-underline border border-[rgba(200,169,126,0.15)] px-5 py-2.5 rounded-sm hover:bg-[rgba(200,169,126,0.1)] transition-colors duration-200 whitespace-nowrap">
-                View Full Menu →
-            </a>
+
+            <div class="max-w-xs">
+    <p class="font-sans text-sm text-grind-muted opacity-60 leading-relaxed ">
+        Every cup is crafted for the grind. Whether you need a jolt to start or a slow sip to finish — we've got your order.
+    </p>
+    <a href="#contact" class="inline-flex items-center gap-2 font-sans text-sm text-[#c8a97e] hover:text-[#1a1a1a] transition-colors duration-200 no-underline mt-3 group">
+        Reserve a spot
+        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+    </a>
+</div>
         </div>
 
         {{-- Cards --}}
@@ -33,7 +41,8 @@
                     'price'    => '₱99',
                     'tags'     => ['Espresso', 'Bold', 'Classic'],
                     'badge'    => 'Most Ordered',
-                    'fill'     => '#3d1f10',
+                    'fill'     => '#c8956c',
+                'bg' => '#8f5f3f'
                 ],
                 [
                     'name'     => 'Cold Brew Overflow',
@@ -42,7 +51,8 @@
                     'price'    => '₱129',
                     'tags'     => ['Cold', 'Smooth', 'Strong'],
                     'badge'    => 'Staff Pick',
-                    'fill'     => '#1c1008',
+                    'fill'     => '#3d1f10',
+                    'bg'       => '#3d1f10',
                 ],
                 [
                     'name'     => 'Matcha Hustle Latte',
@@ -52,67 +62,70 @@
                     'tags'     => ['Matcha', 'Creamy', 'Smooth'],
                     'badge'    => 'New',
                     'fill'     => '#1a2e1a',
+                    'bg'       => '#1a2e1a',
                 ],
             ];
         @endphp
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-[rgba(200,169,126,0.15)]">
-            @foreach ($drinks as $idx => $drink)
-                <div class="group relative bg-[#1a1a1a] p-10 overflow-hidden hover:bg-[#1d1d1d] transition-colors duration-300 cursor-pointer">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 rounded-xl overflow-hidden border border-black/8 shadow-sm">
+    @foreach ($drinks as $idx => $drink)
 
-                    {{-- Hover left accent line --}}
-                    <div class="absolute top-0 left-0 w-0.75 h-0 bg-[#c8a97e] group-hover:h-full transition-all duration-500 ease-out"></div>
+        <div class="group relative overflow-hidden  transition-all duration-300 cursor-pointer shadow-sm ">
 
-                    {{-- Badge --}}
-                    <span class="inline-block font-mono-grind text-[0.6rem] tracking-widest text-[#1a1a1a] bg-[#c8a97e] px-3 py-1 rounded-sm uppercase mb-6">
-                        {{ $drink['badge'] }}
-                    </span>
+            {{-- TOP: white cup area --}}
+            <div class="relative bg-grind-text px-10 pt-8 pb-6">
+                <span class="inline-block font-mono-grind text-[0.6rem] tracking-widest text-[#1a1a1a] bg-[#c8a97e] px-3 py-1 rounded-sm uppercase mb-6">
+                    {{ $drink['badge'] }}
+                </span>
 
-                    {{-- Mini cup SVG --}}
-                    <div class="flex justify-center mb-8">
-                        <svg width="100" height="120" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="dg{{ $idx }}" x1="0%" y1="0%" x2="100%" y2="0%">
-                                    <stop offset="0%" stop-color="rgba(0,0,0,0.5)"/>
-                                    <stop offset="50%" stop-color="rgba(255,255,255,0.06)"/>
-                                    <stop offset="100%" stop-color="rgba(0,0,0,0.5)"/>
-                                </linearGradient>
-                            </defs>
-                            <path d="M20 20 L25 100 L75 100 L80 20 Z" fill="{{ $drink['fill'] }}"/>
-                            <path d="M20 20 L25 100 L75 100 L80 20 Z" fill="url(#dg{{ $idx }})"/>
-                            <ellipse cx="50" cy="22" rx="30" ry="5" fill="#1a1a1a" opacity="0.8"/>
-                            <rect x="30" y="18" width="40" height="6" rx="3" fill="#2a2520"/>
-                            <text x="50" y="65" text-anchor="middle" font-family="'Space Mono',monospace" font-size="7" fill="rgba(232,213,183,0.45)" letter-spacing="2">GRIND</text>
-                            <ellipse cx="50" cy="100" rx="25" ry="4" fill="#111" opacity="0.6"/>
-                            <path d="M80 40 Q96 40 96 60 Q96 80 80 80" stroke="#2a2520" stroke-width="7" fill="none" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-
-                    {{-- Name --}}
-                    <h3 class="font-display text-[1.4rem] font-bold text-[#f5f0e8] mb-1">{{ $drink['name'] }}</h3>
-                    <p class="font-mono-grind text-[0.7rem] text-[#c8a97e] opacity-70 tracking-wide mb-4">{{ $drink['subtitle'] }}</p>
-
-                    {{-- Desc --}}
-                    <p class="font-sans text-sm text-[#e8d5b7] opacity-55 leading-relaxed mb-6">{{ $drink['desc'] }}</p>
-
-                    {{-- Tags --}}
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        @foreach ($drink['tags'] as $tag)
-                            <span class="font-mono-grind text-[0.6rem] tracking-widest text-[#e8d5b7] border border-[rgba(200,169,126,0.15)] px-2.5 py-1 rounded-sm uppercase opacity-60">
-                                {{ $tag }}
-                            </span>
-                        @endforeach
-                    </div>
-
-                    {{-- Price + CTA --}}
-                    <div class="flex items-center justify-between pt-5 border-t border-[rgba(200,169,126,0.15)]">
-                        <span class="font-display text-[1.8rem] font-black text-[#c8a97e]">{{ $drink['price'] }}</span>
-                        <button class="font-mono-grind text-[0.7rem] tracking-wider text-[#1a1a1a] bg-[#c8a97e] px-5 py-2.5 rounded-sm hover:bg-[#e8d5b7] transition-colors duration-200 cursor-pointer border-none">
-                            Order →
-                        </button>
-                    </div>
+                <div class="flex justify-center mb-2">
+                    <svg width="100" height="120" viewBox="0 0 100 120" fill="none">
+                        <defs>
+                            <linearGradient id="dg{{ $idx }}" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="rgba(0,0,0,0.5)"/>
+                                <stop offset="50%" stop-color="rgba(255,255,255,0.06)"/>
+                                <stop offset="100%" stop-color="rgba(0,0,0,0.5)"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 20 L25 100 L75 100 L80 20 Z" fill="{{ $drink['fill'] }}"/>
+                        <path d="M20 20 L25 100 L75 100 L80 20 Z" fill="url(#dg{{ $idx }})"/>
+                        <ellipse cx="50" cy="22" rx="30" ry="5" fill="#1a1a1a" opacity="0.8"/>
+                        <rect x="30" y="18" width="40" height="6" rx="3" fill="#2a2520"/>
+                        <text x="50" y="65" text-anchor="middle" font-family="'Space Mono',monospace" font-size="7" fill="rgba(232,213,183,0.45)" letter-spacing="2">GRIND</text>
+                        <ellipse cx="50" cy="100" rx="25" ry="4" fill="#111" opacity="0.6"/>
+                        <path d="M80 40 Q96 40 96 60 Q96 80 80 80" stroke="#2a2520" stroke-width="7" fill="none" stroke-linecap="round"/>
+                    </svg>
                 </div>
-            @endforeach
+            </div>
+
+            {{-- BOTTOM: colored content area --}}
+            <div class="p-10 pt-8" style="background-color: {{ $drink['bg'] }}">
+
+                <div class="absolute top-0 left-0 w-0.75 h-0 bg-grind-primary group-hover:h-full transition-all duration-500 ease-out"></div>
+
+                <h3 class="font-display text-[1.4rem] font-bold text-white mb-1">{{ $drink['name'] }}</h3>
+                <p class="font-mono-grind text-[0.7rem] text-[#c8a97e] opacity-70 tracking-wide mb-4">{{ $drink['subtitle'] }}</p>
+                <p class="font-sans text-sm text-[#e8d5b7] opacity-55 leading-relaxed mb-6">{{ $drink['desc'] }}</p>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                    @foreach ($drink['tags'] as $tag)
+                        <span class="font-mono-grind text-[0.6rem] tracking-widest text-[#e8d5b7] border border-[rgba(200,169,126,0.15)] px-2.5 py-1 rounded-sm uppercase opacity-60">
+                            {{ $tag }}
+                        </span>
+                    @endforeach
+                </div>
+
+                <div class="flex items-center justify-between pt-5 border-t border-[rgba(200,169,126,0.15)]">
+                    <span class="font-display text-[1.8rem] font-black text-[#c8a97e]">{{ $drink['price'] }}</span>
+                    <button class="font-mono-grind text-[0.7rem] tracking-wider text-[#1a1a1a] bg-[#c8a97e] px-5 py-2.5 rounded-sm hover:bg-[#e8d5b7] transition-colors duration-200 cursor-pointer border-none">
+                        Order →
+                    </button>
+                </div>
+            </div>
+
         </div>
+
+    @endforeach
+</div>
     </div>
 </section>
