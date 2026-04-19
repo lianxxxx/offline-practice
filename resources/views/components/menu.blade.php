@@ -1,4 +1,4 @@
-<section id="menu" class="relative py-12 px-6 overflow-hidden">
+<section id="menu" class="relative pt-20 pb-40 px-6 overflow-hidden">
 
     <div class="absolute top-0 left-0 right-0 h-px opacity-20"
          style="background: linear-gradient(to right, transparent, #c8a97e, transparent)"></div>
@@ -67,10 +67,10 @@
             ];
         @endphp
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-0 rounded-xl overflow-hidden border border-black/8 shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0 rounded-xl overflow-hidden border border-black/8 shadow-sm">
     @foreach ($drinks as $idx => $drink)
 
-        <div class="group relative overflow-hidden  transition-all duration-300 cursor-pointer shadow-sm ">
+<div class="group relative overflow-hidden transition-all duration-300 cursor-pointer shadow-sm rounded-xl md:rounded-none">
 
             {{-- TOP: white cup area --}}
             <div class="relative bg-grind-text px-10 pt-8 pb-6">
