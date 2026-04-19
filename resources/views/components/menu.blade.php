@@ -20,9 +20,9 @@
 
             <div class="max-w-xs">
     <p class="font-sans text-sm text-grind-muted opacity-60 leading-relaxed ">
-        Every cup is crafted for the grind. Whether you need a jolt to start or a slow sip to finish — we've got your order.
+       Crafted for the grind, poured for the focus. From the first spark of an idea to the slow sip of a job well done. We’re here for every breakthrough.
     </p>
-    <a href="#contact" class="inline-flex items-center gap-2 font-sans text-sm text-[#c8a97e] hover:text-[#1a1a1a] transition-colors duration-200 no-underline mt-3 group">
+    <a href="#contact" class="inline-flex items-center gap-2 font-sans text-sm text-grind-primary hover:font-medium transition-colors duration-200 no-underline mt-3 group">
         Reserve a spot
         <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -35,22 +35,23 @@
         @php
             $drinks = [
                 [
-                    'name'     => 'The Grind Espresso',
-                    'subtitle' => 'Double shot. Dark roast.',
-                    'desc'     => 'Two concentrated shots of our Cordillera blend. Dense, bitter, and unapologetically strong. The one that starts the session.',
-                    'price'    => '₱99',
-                    'tags'     => ['Espresso', 'Bold', 'Classic'],
-                    'badge'    => 'Most Ordered',
-                    'fill'     => '#c8956c',
-                'bg' => '#8f5f3f'
-                ],
-                [
                     'name'     => 'Cold Brew Overflow',
                     'subtitle' => '18-hour steep.',
                     'desc'     => 'Slow-steeped for 18 hours in cold water. Smooth, low-acid, and dangerously easy to drink. Pairs with debugging at 2AM.',
                     'price'    => '₱129',
                     'tags'     => ['Cold', 'Smooth', 'Strong'],
                     'badge'    => 'Staff Pick',
+                    'fill'     => '#c8956c',
+                     'bg'      => '#8f5f3f'
+                ],
+                [
+               
+                    'name'     => 'The Grind Espresso',
+                    'subtitle' => 'Double shot. Dark roast.',
+                    'desc'     => 'Two concentrated shots of our Cordillera blend. Dense, bitter, and unapologetically strong. The one that starts the session.',
+                    'price'    => '₱99',
+                    'tags'     => ['Espresso', 'Bold', 'Classic'],
+                    'badge'    => 'Most Ordered',
                     'fill'     => '#3d1f10',
                     'bg'       => '#3d1f10',
                 ],

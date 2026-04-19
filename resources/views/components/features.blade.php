@@ -14,9 +14,7 @@
                     Built for the<br>
                     <em class="text-grind-primary">deep work</em> era.
                 </h2>
-                <p class="font-sans text-sm text-grind-primary opacity-60 max-w-xs leading-relaxed md:pb-2">
-                    Not your typical coffee shop. Grind is designed from the ground up for students, freelancers, and late-night builders.
-                </p>
+              
             </div>
         </div>
 
@@ -33,7 +31,7 @@
                 [
                     'tag'   => 'Focus Zones',
                     'title' => 'Study Space',
-                    'desc'  => 'Quiet pods, communal tables, and standing desks. Reserve a spot or walk in — there\'s always room to think.',
+                    'desc'  => 'Quiet pods, communal tables, and standing desks. Reserve a spot or walk in, there\'s always room to think.',
                     'detail'=> '20+ seats available',
                     'icon'  => '<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>',
                 ],
@@ -41,14 +39,14 @@
                     'tag'   => 'Single Origin',
                     'title' => 'Premium Coffee',
                     'desc'  => 'Beans sourced from Cordillera highlands. Roasted in small batches. Every cup is an intentional act.',
-                    'detail'=> 'From ₱99',
+                    'detail'=> 'Starts as low as ₱99',
                     'icon'  => '<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>',
                 ],
                 [
                     'tag'   => 'Lo-fi Always On',
                     'title' => 'Good Vibes',
                     'desc'  => 'Curated ambient playlists. Never too loud, never too quiet. The right background to get into the zone.',
-                    'detail'=> '0 ads, forever',
+                    'detail'=> 'Good music, always on point',
                     'icon'  => '<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>',
                 ],
             ];

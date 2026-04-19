@@ -22,8 +22,8 @@
 
         <h2 class="font-display font-black text-grind-muted text-whiteleading-[1.05] mb-6"
             style="font-size: clamp(2.8rem, 6vw, 5rem) ">
-            Stop browsing.<br>
-            Start <em class="text-grind-primary">building.</em>
+           Less distractions.<br>
+           More <em class="text-grind-primary">action.</em>
         </h2>
 
         <p class="font-sans text-base text-grind-surface opacity-60 max-w-125 mx-auto leading-loose mb-12">
