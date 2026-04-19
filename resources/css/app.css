@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -6,6 +6,91 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans:
+        "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+@import "tailwindcss";
+
+@theme {
+    --color-grind-bg: #1a1a1a;
+    --color-grind-surface: #222222;
+    --color-grind-primary: #c8a97e;
+    --color-grind-accent: #e8d5b7;
+    --color-grind-text: #f5f0e8;
+    --color-grind-muted: #6b6560;
+    --color-grind-border: rgba(200, 169, 126, 0.15);
+
+    --font-display: "Playfair Display", serif;
+    --font-mono: "Space Mono", monospace;
+    --font-sans: "DM Sans", sans-serif;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        background-color: var(--color-grind-bg);
+        color: var(--color-grind-text);
+        font-family: var(--font-sans);
+    }
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+    ::-webkit-scrollbar-track {
+        background: var(--color-grind-bg);
+    }
+    ::-webkit-scrollbar-thumb {
+        background: var(--color-grind-primary);
+        border-radius: 2px;
+    }
+}
+
+@layer utilities {
+    .font-display {
+        font-family: var(--font-display);
+    }
+    .font-mono-grind {
+        font-family: var(--font-mono);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-fade-up {
+    animation: fadeUp 0.9s ease both;
+}
+.animate-fade-up-delay {
+    animation: fadeUp 0.9s 0.15s ease both;
+}
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+.animate-spin-slow {
+    animation: spin 1s linear infinite;
 }
