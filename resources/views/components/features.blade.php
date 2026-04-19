@@ -1,4 +1,4 @@
-<section id="features" class="relative py-32 px-6 overflow-hidden">
+<section id="features" class="relative py-12 px-6 overflow-hidden">
 
     {{-- Top rule --}}
     <div class="absolute top-0 left-0 right-0 h-px opacity-30"
@@ -10,11 +10,11 @@
         <div class="mb-20">
             <span class="font-mono-grind text-[0.7rem] tracking-[0.3em] text-[#c8a97e] uppercase">Why Grind?</span>
             <div class="flex flex-col md:flex-row md:items-end gap-6 mt-3">
-                <h2 class="font-display text-[clamp(2.5rem,5vw,4rem)] font-black text-[#f5f0e8] leading-none">
+                <h2 class="font-display text-[clamp(2.5rem,5vw,4rem)] font-black text-grind-muted leading-none">
                     Built for the<br>
-                    <em class="text-[#c8a97e]">deep work</em> era.
+                    <em class="text-grind-primary">deep work</em> era.
                 </h2>
-                <p class="font-sans text-sm text-[#e8d5b7] opacity-60 max-w-xs leading-relaxed md:pb-2">
+                <p class="font-sans text-sm text-grind-primary opacity-60 max-w-xs leading-relaxed md:pb-2">
                     Not your typical coffee shop. Grind is designed from the ground up for students, freelancers, and late-night builders.
                 </p>
             </div>
@@ -54,32 +54,22 @@
             ];
         @endphp
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[rgba(200,169,126,0.15)]">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px">
             @foreach ($features as $i => $f)
-                <div class="group relative bg-[#1a1a1a] p-10 overflow-hidden hover:bg-[#1f1f1f] transition-colors duration-300">
+              <div class="group relative p-10 overflow-hidden hover:bg-[#f0eeeb] hover:rounded-xl transition-colors duration-300">
 
-                    {{-- Number --}}
-                    <span class="absolute top-6 right-6 font-mono-grind text-[0.65rem] text-[#6b6560] opacity-50">0{{ $i + 1 }}</span>
+    <span class="absolute top-6 right-6 font-mono-grind text-[0.65rem] text-grind-surface opacity-50">0{{ $i + 1 }}</span>
 
-                    {{-- Icon --}}
-                    <div class="text-[#c8a97e] mb-6">{!! $f['icon'] !!}</div>
+    <div class="text-grind-primary mb-6">{!! $f['icon'] !!}</div>
 
-                    {{-- Tag --}}
-                    <p class="font-mono-grind text-[0.65rem] tracking-[0.15em] text-[#c8a97e] uppercase opacity-70 mb-3">{{ $f['tag'] }}</p>
+    <p class="font-mono-grind text-[0.65rem] tracking-[0.15em] text-grind-muted uppercase opacity-70 mb-3">{{ $f['tag'] }}</p>
 
-                    {{-- Title --}}
-                    <h3 class="font-display text-[1.4rem] font-bold text-[#f5f0e8] mb-3">{{ $f['title'] }}</h3>
+    <h3 class="text-[1.4rem] font-bold text-grind-muted mb-3">{{ $f['title'] }}</h3>
 
-                    {{-- Desc --}}
-                    <p class="font-sans text-sm text-[#e8d5b7] opacity-60 leading-relaxed mb-6">{{ $f['desc'] }}</p>
+    <p class="font-sans text-sm text-grind-primary  opacity-60 leading-relaxed mb-6">{{ $f['desc'] }}</p>
 
-                    {{-- Detail --}}
-                    <p class="font-mono-grind text-[0.7rem] text-[#c8a97e] border-t border-[rgba(200,169,126,0.15)] pt-4">{{ $f['detail'] }}</p>
-
-                    {{-- Hover glow --}}
-                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300"
-                         style="background: radial-gradient(circle at 50% 120%, rgba(200,169,126,0.07), transparent 70%)"></div>
-                </div>
+    <p class="font-mono-grind text-[0.7rem] text-grind-primary border-t border-[rgba(200,169,126,0.15)] pt-4">{{ $f['detail'] }}</p>
+</div>
             @endforeach
         </div>
     </div>

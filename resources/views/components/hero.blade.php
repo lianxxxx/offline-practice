@@ -118,7 +118,7 @@
 
             {{-- Price badge --}}
             <div class="absolute bottom-4 left-12 w-22 h-22 rounded-full bg-grind-primary flex flex-col items-center justify-center animate-float">
-                <span class="font-mono-grind text-[0.6rem] font-bold   text-slate-700   tracking-wider">FROM</span>
+                <span class="font-mono-grind text-[0.6rem] font-bold   text-grind-muted   tracking-wider">FROM</span>
                 <span class="font-mono-grind text-xl font-bold text-white leading-tight">₱99</span>
             </div>
         </div>
