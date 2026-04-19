@@ -94,3 +94,6 @@
 .animate-spin-slow {
     animation: spin 1s linear infinite;
 }
+.scrolled-dark {
+    background-color: rgba(26, 26, 26, 0.95) !important;
+}
