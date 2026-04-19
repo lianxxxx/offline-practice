@@ -45,7 +45,7 @@
         <div class="flex flex-wrap justify-center gap-12 mt-16">
             @foreach(['Mon–Fri' => '7AM – 2AM', 'Weekends' => '8AM – 4AM', 'Holidays' => 'Never closed'] as $day => $time)
                 <div class="text-center">
-                    <p class="font-mono-grind text-[0.65rem] text-grind-primary tracking-[0.15em] uppercase mb-1">{{ $day }}</p>
+                    <p class="font-mono-grind text-[0.65rem] text-grind-primary  tracking-[0.15em] uppercase mb-1">{{ $day }}</p>
                     <p class="font-display text-lg text-grind-muted">{{ $time }}</p>
                 </div>
             @endforeach
