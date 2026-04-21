@@ -2,19 +2,18 @@
 
     {{-- Top rule --}}
     <div class="absolute top-0 left-0 right-0 h-px opacity-30"
-         style="background: linear-gradient(to right, transparent, #c8a97e, transparent)"></div>
+         style="background: linear-gradient(to right, transparent, var(--color-grind-primary), transparent)"></div>
 
     <div class="max-w-300 mx-auto">
 
         {{-- Header --}}
         <div class="mb-20">
-            <span class="font-mono-grind text-[0.7rem] tracking-[0.3em] text-[#c8a97e] uppercase">Why Grind?</span>
+            <span class="font-mono-grind text-[0.7rem] tracking-[0.3em] text-grind-primary uppercase">Why Grind?</span>
             <div class="flex flex-col md:flex-row md:items-end gap-6 mt-3">
                 <h2 class="font-display text-[clamp(2.5rem,5vw,4rem)] font-black text-grind-muted leading-none">
                     Built for the<br>
                     <em class="text-grind-primary">deep work</em> era.
                 </h2>
-              
             </div>
         </div>
 
@@ -54,20 +53,20 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px">
             @foreach ($features as $i => $f)
-              <div class="group relative p-10 overflow-hidden hover:bg-[#f0eeeb] hover:rounded-xl transition-colors duration-300">
+                <div class="group relative p-10 overflow-hidden hover:bg-[#f0eeeb] hover:rounded-xl transition-colors duration-300">
 
-    <span class="absolute top-6 right-6 font-mono-grind text-[0.65rem] text-grind-surface opacity-50">0{{ $i + 1 }}</span>
+                    <span class="absolute top-6 right-6 font-mono-grind text-[0.65rem] text-grind-surface opacity-50">0{{ $i + 1 }}</span>
 
-    <div class="text-grind-primary mb-6">{!! $f['icon'] !!}</div>
+                    <div class="text-grind-primary mb-6">{!! $f['icon'] !!}</div>
 
-    <p class="font-mono-grind text-[0.65rem] tracking-[0.15em] text-grind-muted uppercase opacity-70 mb-3">{{ $f['tag'] }}</p>
+                    <p class="font-mono-grind text-[0.65rem] tracking-[0.15em] text-grind-muted uppercase opacity-70 mb-3">{{ $f['tag'] }}</p>
 
-    <h3 class="text-[1.4rem] font-bold text-grind-muted mb-3">{{ $f['title'] }}</h3>
+                    <h3 class="text-[1.4rem] font-bold text-grind-muted mb-3">{{ $f['title'] }}</h3>
 
-    <p class="font-sans text-sm text-grind-primary  opacity-60 leading-relaxed mb-6">{{ $f['desc'] }}</p>
+                    <p class="font-sans text-sm text-grind-primary opacity-60 leading-relaxed mb-6">{{ $f['desc'] }}</p>
 
-    <p class="font-mono-grind text-[0.7rem] text-grind-primary border-t border-[rgba(200,169,126,0.15)] pt-4">{{ $f['detail'] }}</p>
-</div>
+                    <p class="font-mono-grind text-[0.7rem] text-grind-primary border-t border-grind-border pt-4">{{ $f['detail'] }}</p>
+                </div>
             @endforeach
         </div>
     </div>

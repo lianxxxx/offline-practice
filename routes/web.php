@@ -2,6 +2,5 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', App\Livewire\Pages\Home\Index::class)->name('home');
+Route::get('/menu', App\Livewire\Pages\Menu\Index::class)->name('menu');

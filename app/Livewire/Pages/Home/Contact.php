@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Pages\Home;
 
+use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
-class ContactForm extends Component
+class Contact extends Component
 {
     public string $name = '';
     public string $email = '';
@@ -29,8 +31,8 @@ class ContactForm extends Component
     {
         $this->validate();
 
-        // TODO: Wire up mail here
-        // Mail::to('hello@grindcoffee.ph')->send(new ContactMail($this->all()));
+        Mail::to(config('mail.to.address', 'hello@grindcoffee.ph'))
+            ->send(new ContactMail($this->name, $this->email, $this->message));
 
         session()->flash('success', 'Message received! We\'ll get back to you soon. ☕');
 
@@ -39,6 +41,6 @@ class ContactForm extends Component
 
     public function render()
     {
-        return view('livewire.contact-form');
+        return view('livewire.pages.home.contact');
     }
 }

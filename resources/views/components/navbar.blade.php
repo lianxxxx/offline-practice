@@ -2,37 +2,46 @@
     <div class="max-w-300 mx-auto flex items-center justify-between">
 
         {{-- Logo --}}
-<a href="/" class="flex items-center gap-2 no-underline group">
-    
-    <img src="{{ asset('logo.png') }}" 
-         alt="Grind Logo" 
-         class="h-6 w-6 object-contain">
+        <a href="{{ route('home') }}" wire:navigate class="flex items-center gap-2 no-underline group">
+            <img src="{{ asset('logo.png') }}"
+                 alt="Grind Logo"
+                 class="h-6 w-6 object-contain">
+            <span class="text-3xl font-mono-grind font-bold text-grind-primary">GRIND</span>
+        </a>
 
-    <span class="text-3xl font-mono-grind   font-bold text-grind-primary">
-        GRIND
-    </span>
-
-</a>
         {{-- Desktop links --}}
         <ul class="hidden md:flex items-center gap-10 list-none">
-            @foreach(['Home' => '#hero', 'Menu' => '#menu', 'About' => '#features', 'Contact' => '#contact'] as $label => $href)
-                <li>
-                    <a href="{{ $href }}"
-                  class="font-sans text-sm text-stone-600 hover:text-stone-900 font-medium tracking-wide transition-all duration-200 no-underline">
-                        {{ $label }}
-                    </a>
-                </li>
-            @endforeach
+            <li>
+                <a href="{{ route('home') }}" wire:navigate
+                   class="font-sans text-sm text-stone-600 hover:text-stone-900 font-medium tracking-wide transition-all duration-200 no-underline">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('menu') }}" wire:navigate
+                   class="font-sans text-sm text-stone-600 hover:text-stone-900 font-medium tracking-wide transition-all duration-200 no-underline">
+                    Menu
+                </a>
+            </li>
+            <li>
+                <a href="#features"
+                   class="font-sans text-sm text-stone-600 hover:text-stone-900 font-medium tracking-wide transition-all duration-200 no-underline">
+                    About
+                </a>
+            </li>
+            <li>
+                <a href="#contact"
+                   class="font-sans text-sm text-stone-600 hover:text-stone-900 font-medium tracking-wide transition-all duration-200 no-underline">
+                    Contact
+                </a>
+            </li>
         </ul>
 
         {{-- Desktop CTA --}}
-      <a href="#menu"
-   class="hidden md:inline-flex items-center gap-2 font-sans text-xs font-medium tracking-widest bg-grind-primary text-white px-7 py-2.5 rounded-lg hover:bg-grind-accent hover:text-stone-600 hover:font-medium hover:-translate-y-0.5 transition-all duration-200 no-underline">
-
-    
-
-    Order Now
-</a>
+        <a href="{{ route('menu') }}" wire:navigate
+           class="hidden md:inline-flex items-center gap-2 font-sans text-xs font-medium tracking-widest bg-grind-primary text-white px-7 py-2.5 rounded-lg hover:bg-grind-accent hover:text-stone-600 hover:-translate-y-0.5 transition-all duration-200 no-underline">
+            Order Now
+        </a>
 
         {{-- Burger --}}
         <button id="burger" class="md:hidden flex flex-col gap-1.5 cursor-pointer bg-transparent border-none p-1" aria-label="Toggle menu">
@@ -43,17 +52,32 @@
     </div>
 
     {{-- Mobile menu --}}
- <div id="mobile-menu" class="hidden md:hidden pt-4 pb-6 border-t border-[rgba(200,169,126,0.15)] mt-4 bg-[#F8f8f8] -mx-8 px-8">
+    <div id="mobile-menu" class="hidden md:hidden pt-4 pb-6 border-t border-grind-border mt-4 bg-[#F8f8f8] -mx-8 px-8">
         <ul class="list-none flex flex-col gap-5">
-            @foreach(['Home' => '#hero', 'Menu' => '#menu', 'About' => '#features', 'Contact' => '#contact'] as $label => $href)
-                <li>
-                    <a href="{{ $href }}"
-                       class="font-sans text-base text-black  transition-all duration-200 no-underline">
-                        {{ $label }}
-                    </a>
-                </li>
-            @endforeach
+            <li>
+                <a href="{{ route('home') }}" wire:navigate
+                   class="font-sans text-base text-black transition-all duration-200 no-underline">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('menu') }}" wire:navigate
+                   class="font-sans text-base text-black transition-all duration-200 no-underline">
+                    Menu
+                </a>
+            </li>
+            <li>
+                <a href="#features"
+                   class="font-sans text-base text-black transition-all duration-200 no-underline">
+                    About
+                </a>
+            </li>
+            <li>
+                <a href="#contact"
+                   class="font-sans text-base text-black transition-all duration-200 no-underline">
+                    Contact
+                </a>
+            </li>
         </ul>
-    </div> 
+    </div>
 </nav>
-
