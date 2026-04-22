@@ -18,7 +18,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('menu') }}" wire:navigate.hover
+                <a href="#menu"
                    class="font-sans text-sm text-stone-600 hover:text-stone-900 font-medium tracking-wide transition-all duration-200 no-underline">
                     Menu
                 </a>
@@ -52,7 +52,7 @@
     </div>
 
     {{-- Mobile menu --}}
-    <div id="mobile-menu" class="hidden md:hidden pt-4 pb-6 border-t border-grind-border mt-4 bg-[#F8f8f8] -mx-8 px-8">
+    <div id="mobile-menu" class="hidden md:hidden pt-4 pb-6 border-t border-grind-border mt-4  -mx-8 px-8">
         <ul class="list-none flex flex-col gap-5">
             <li>
                 <a href="{{ route('home') }}" wire:navigate.hover

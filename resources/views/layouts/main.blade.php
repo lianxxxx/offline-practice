@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-[#F8f8f8] font-sans overflow-x-hidden">
+<body class="bg-grind-page font-sans overflow-x-hidden">
 
     {{-- Grain overlay --}}
     <div class="fixed inset-0 pointer-events-none z-9999 opacity-30"

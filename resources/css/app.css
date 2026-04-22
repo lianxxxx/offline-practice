@@ -13,6 +13,7 @@
     --color-grind-text: #f5f0e8;
     --color-grind-muted: #6b6560;
     --color-grind-border: rgba(200, 169, 126, 0.15);
+    --color-grind-page: #f8f8f8;
 
     --font-display: "Playfair Display", serif;
     --font-mono: "Space Mono", monospace;
@@ -60,11 +61,18 @@
     }
 }
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
 }
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .animate-fade-up {
