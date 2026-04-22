@@ -145,7 +145,7 @@
                         src="https://maps.google.com/maps?q=Bacnotan,+La+Union,+Philippines&t=&z=14&ie=UTF8&iwloc=&output=embed"
                         width="100%"
                         height="100%"
-                        style="min-height: 390px; border: 0; display: block;"
+                        style="min-height: 350px; border: 0; display: block;"
                         allowfullscreen
                         loading="lazy">
                     </iframe>
