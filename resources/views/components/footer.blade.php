@@ -43,7 +43,7 @@
                        class="font-sans text-sm text-grind-primary opacity-70 hover:opacity-100 no-underline transition-opacity duration-200">
                         hello@grindcoffee.ph
                     </a>
-                    <p class="font-mono-grind text-xs text-grind-primary opacity-40">Open til 2AM daily</p>
+                    <p class="font-mono-grind text-xs text-grind-primary opacity-40">Open til 2-4 AM daily</p>
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
         {{-- Bottom bar --}}
         <div class="flex flex-col sm:flex-row justify-between items-center gap-3 pt-8 border-t border-grind-border">
             <p class="font-mono-grind text-xs text-grind-muted tracking-widest">
-               {{ date('Y') }} GRIND COFFEE CO. ALL RIGHTS RESERVED.
+               {{ date('Y') }} GRIND  ALL RIGHTS RESERVED.
             </p>
             <p class="font-mono-grind text-xs text-grind-muted opacity-50">Fuel the grind. </p>
         </div>

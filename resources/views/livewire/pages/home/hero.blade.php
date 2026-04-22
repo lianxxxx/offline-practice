@@ -52,8 +52,8 @@
             <div class="absolute w-105 h-105 rounded-full border border-grind-border"
              style="background: radial-gradient(circle at 40% 40%, color-mix(in srgb, var(--color-grind-primary) 10%, transparent), transparent 70%)"></div>
 
-            {{-- SVG cup --}}
-            <svg class="relative z-10 w-70 md:w-[20rem]" viewBox="0 0 320 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {{-- SVG cup illustration: two staggered cups --}}
+            <svg class="relative z-10 w-full max-w-[28rem]" viewBox="0 0 460 420" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <linearGradient id="cupGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" stop-color="#d7ccc8"/>
@@ -64,47 +64,120 @@
                         <stop offset="0%" stop-color="rgba(255,255,255,0.2)"/>
                         <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
                     </linearGradient>
+                    <linearGradient id="cupGradBg" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#bcaaa4"/>
+                        <stop offset="50%" stop-color="#d7ccc8"/>
+                        <stop offset="100%" stop-color="#bcaaa4"/>
+                    </linearGradient>
+                    <linearGradient id="sleeveGradBg" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="rgba(255,255,255,0.12)"/>
+                        <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+                    </linearGradient>
+                    <linearGradient id="bodyShade" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+                        <stop offset="40%" stop-color="rgba(255,255,255,0)"/>
+                        <stop offset="100%" stop-color="rgba(0,0,0,0.14)"/>
+                    </linearGradient>
+                    <linearGradient id="bodyShadeBg" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="rgba(255,255,255,0.12)"/>
+                        <stop offset="40%" stop-color="rgba(255,255,255,0)"/>
+                        <stop offset="100%" stop-color="rgba(0,0,0,0.1)"/>
+                    </linearGradient>
+                    <linearGradient id="specular" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="rgba(255,255,255,0.32)"/>
+                        <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+                    </linearGradient>
+                    <linearGradient id="lidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#5d4037"/>
+                        <stop offset="100%" stop-color="#3e2723"/>
+                    </linearGradient>
+                    <linearGradient id="lidGradBg" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#4e342e"/>
+                        <stop offset="100%" stop-color="#3e2723"/>
+                    </linearGradient>
                     <filter id="softShadow" x="-20%" y="-20%" width="150%" height="150%">
                         <feGaussianBlur in="SourceAlpha" stdDeviation="5" />
                         <feOffset dx="0" dy="6" />
-                        <feComponentTransfer>
-                            <feFuncA type="linear" slope="0.2" />
-                        </feComponentTransfer>
-                        <feMerge>
-                            <feMergeNode />
-                            <feMergeNode in="SourceGraphic" />
-                        </feMerge>
+                        <feComponentTransfer><feFuncA type="linear" slope="0.2" /></feComponentTransfer>
+                        <feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge>
+                    </filter>
+                    <filter id="softShadowSm" x="-20%" y="-20%" width="150%" height="150%">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+                        <feOffset dx="0" dy="4" />
+                        <feComponentTransfer><feFuncA type="linear" slope="0.12" /></feComponentTransfer>
+                        <feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge>
                     </filter>
                 </defs>
 
-                <g filter="blur(1px)">
-                    <path d="M145 45 Q150 30 145 15" stroke="#bcaa8d" stroke-width="1.5" stroke-linecap="round">
-                        <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3s" repeatCount="indefinite"/>
-                        <animate attributeName="d" values="M145 45 Q150 30 145 15;M145 45 Q140 30 145 15;M145 45 Q150 30 145 15" dur="3s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M175 45 Q180 30 175 15" stroke="#bcaa8d" stroke-width="1.5" stroke-linecap="round">
-                        <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.5s" repeatCount="indefinite"/>
-                        <animate attributeName="d" values="M175 45 Q180 30 175 15;M175 45 Q170 30 175 15;M175 45 Q180 30 175 15" dur="2.5s" repeatCount="indefinite"/>
-                    </path>
+                {{-- Background cup: smaller, tilted, faded --}}
+                <g opacity="0.55" transform="translate(40, 70) scale(0.68) rotate(6, 160, 200)">
+                    <path d="M90 70 L110 320 Q112 330 125 330 L195 330 Q208 330 210 320 L230 70 Z" fill="url(#cupGradBg)" filter="url(#softShadowSm)"/>
+                    <path d="M90 70 L110 320 Q112 330 125 330 L195 330 Q208 330 210 320 L230 70 Z" fill="url(#bodyShadeBg)"/>
+                    <path d="M90 70 L105 70 L125 320 L110 320 Z" fill="url(#specular)" opacity="0.4"/>
+                    <path d="M96 145 L106 255 L214 255 L224 145 Z" fill="rgba(141,110,99,0.08)" stroke="rgba(141,110,99,0.2)" stroke-width="1"/>
+                    <line x1="99" y1="175" x2="221" y2="175" stroke="rgba(141,110,99,0.14)" stroke-width="0.6"/>
+                    <line x1="101" y1="200" x2="219" y2="200" stroke="rgba(141,110,99,0.14)" stroke-width="0.6"/>
+                    <line x1="103" y1="225" x2="217" y2="225" stroke="rgba(141,110,99,0.14)" stroke-width="0.6"/>
+                    <path d="M96 145 L106 255 L214 255 L224 145 Z" fill="url(#sleeveGradBg)"/>
+                    <circle cx="160" cy="180" r="32" stroke="#8d6e63" stroke-width="0.5" fill="none" opacity="0.15"/>
+                    <text x="160" y="198" text-anchor="middle" font-family="'Times New Roman', serif" font-size="24" font-weight="bold" fill="#5d4037" style="letter-spacing:3px" opacity="0.6">GRIND</text>
+                    <text x="160" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" letter-spacing="5" fill="#8d6e63" font-weight="300" opacity="0.5">ESTD 2024</text>
+                    <path d="M85 70 Q160 50 235 70 L235 90 Q160 74 85 90 Z" fill="url(#lidGradBg)"/>
+                    <ellipse cx="160" cy="70" rx="76" ry="14" fill="#3e2723"/>
+                    <ellipse cx="152" cy="67" rx="38" ry="6" fill="rgba(255,255,255,0.05)"/>
+                    <path d="M85 70 Q160 50 235 70" stroke="rgba(200,169,126,0.14)" stroke-width="0.8" fill="none"/>
+                    <path d="M176 68 Q182 57 198 55 Q214 57 220 68 L218 74 Q198 69 178 74 Z" fill="#2e1a0e" opacity="0.85"/>
+                    <path d="M179 68 Q198 61 217 68 L215 72 Q198 66 181 72 Z" fill="#4e2d1a" opacity="0.75"/>
+                    <path d="M187 69 Q198 66 209 69" stroke="rgba(0,0,0,0.45)" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+                    <path d="M193 54 Q200 50 207 54 L207 61 Q200 58 193 61 Z" fill="#2e1a0e" opacity="0.8"/>
+                    <path d="M194 55 Q200 52 206 55 L206 60 Q200 57 194 60 Z" fill="#4a2818" opacity="0.7"/>
+                    <ellipse cx="160" cy="345" rx="65" ry="10" fill="#000" opacity="0.04"/>
                 </g>
 
-                <path d="M90 70 L110 320 Q112 330 125 330 L195 330 Q208 330 210 320 L230 70 Z" fill="url(#cupGrad)" filter="url(#softShadow)"/>
-                <path d="M96 145 L106 255 L214 255 L224 145 Z" fill="rgba(141, 110, 99, 0.08)" stroke="rgba(141, 110, 99, 0.15)" stroke-width="1"/>
-                <path d="M96 145 L106 255 L214 255 L224 145 Z" fill="url(#sleeveGrad)"/>
-                <circle cx="160" cy="180" r="32" stroke="#8d6e63" stroke-width="0.5" fill="none" opacity="0.2"/>
-                <text x="160" y="198" text-anchor="middle" font-family="'Times New Roman', serif" font-size="24" font-weight="bold" fill="#5d4037" style="letter-spacing: 3px">GRIND</text>
-                <text x="160" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" letter-spacing="5" fill="#8d6e63" font-weight="300">ESTD 2024</text>
-                <path d="M85 70 Q160 52 235 70 L235 88 Q160 72 85 88 Z" fill="#3e2723" />
-                <rect x="130" y="60" width="60" height="8" rx="4" fill="#4e342e" />
+                {{-- Foreground cup: full size, shifted right --}}
+                <g transform="translate(80, 0)">
+                    <g filter="blur(1px)">
+                        <path d="M145 45 Q150 30 145 15" stroke="#bcaa8d" stroke-width="1.5" stroke-linecap="round">
+                            <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3s" repeatCount="indefinite"/>
+                            <animate attributeName="d" values="M145 45 Q150 30 145 15;M145 45 Q140 30 145 15;M145 45 Q150 30 145 15" dur="3s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M175 45 Q180 30 175 15" stroke="#bcaa8d" stroke-width="1.5" stroke-linecap="round">
+                            <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.5s" repeatCount="indefinite"/>
+                            <animate attributeName="d" values="M175 45 Q180 30 175 15;M175 45 Q170 30 175 15;M175 45 Q180 30 175 15" dur="2.5s" repeatCount="indefinite"/>
+                        </path>
+                    </g>
+                    <path d="M90 70 L110 320 Q112 330 125 330 L195 330 Q208 330 210 320 L230 70 Z" fill="url(#cupGrad)" filter="url(#softShadow)"/>
+                    <path d="M90 70 L110 320 Q112 330 125 330 L195 330 Q208 330 210 320 L230 70 Z" fill="url(#bodyShade)"/>
+                    <path d="M90 70 L105 70 L125 320 L110 320 Z" fill="url(#specular)" opacity="0.6"/>
+                    <path d="M96 145 L106 255 L214 255 L224 145 Z" fill="rgba(141,110,99,0.1)" stroke="rgba(141,110,99,0.22)" stroke-width="1"/>
+                    <line x1="99" y1="175" x2="221" y2="175" stroke="rgba(141,110,99,0.18)" stroke-width="0.6"/>
+                    <line x1="101" y1="200" x2="219" y2="200" stroke="rgba(141,110,99,0.18)" stroke-width="0.6"/>
+                    <line x1="103" y1="225" x2="217" y2="225" stroke="rgba(141,110,99,0.18)" stroke-width="0.6"/>
+                    <path d="M96 145 L106 255 L214 255 L224 145 Z" fill="url(#sleeveGrad)"/>
+                    <circle cx="160" cy="180" r="32" stroke="#8d6e63" stroke-width="0.5" fill="none" opacity="0.2"/>
+                    <text x="160" y="198" text-anchor="middle" font-family="'Times New Roman', serif" font-size="24" font-weight="bold" fill="#5d4037" style="letter-spacing:3px">GRIND</text>
+                    <text x="160" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" letter-spacing="5" fill="#8d6e63" font-weight="300">ESTD 2024</text>
+                    <path d="M85 70 Q160 50 235 70 L235 90 Q160 74 85 90 Z" fill="url(#lidGrad)"/>
+                    <ellipse cx="160" cy="70" rx="76" ry="14" fill="#3e2723"/>
+                    <ellipse cx="150" cy="67" rx="44" ry="7" fill="rgba(255,255,255,0.07)"/>
+                    <path d="M85 70 Q160 50 235 70" stroke="rgba(200,169,126,0.2)" stroke-width="0.8" fill="none"/>
+                    <path d="M176 68 Q182 57 198 55 Q214 57 220 68 L218 75 Q198 70 178 75 Z" fill="#2e1a0e"/>
+                    <path d="M179 68 Q198 61 217 68 L215 73 Q198 67 181 73 Z" fill="#4e2d1a"/>
+                    <path d="M187 69 Q198 66 209 69" stroke="rgba(0,0,0,0.5)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                    <path d="M182 66 Q198 62 214 66" stroke="rgba(255,255,255,0.09)" stroke-width="1" stroke-linecap="round" fill="none"/>
+                    <path d="M193 54 Q200 50 207 54 L207 61 Q200 58 193 61 Z" fill="#2e1a0e"/>
+                    <path d="M194 55 Q200 52 206 55 L206 60 Q200 57 194 60 Z" fill="#4a2818"/>
+                    <ellipse cx="160" cy="345" rx="70" ry="12" fill="#000" opacity="0.05"/>
+                </g>
 
+                {{-- Floating coffee beans --}}
                 <g>
                     <animateTransform attributeName="transform" type="translate" values="0 0; 0 -4; 0 0" dur="5s" repeatCount="indefinite" />
-                    <ellipse cx="60" cy="160" rx="8" ry="5" fill="#8d6e63" transform="rotate(-20 60 160)" opacity="0.6"/>
-                    <ellipse cx="260" cy="100" rx="7" ry="4" fill="#8d6e63" transform="rotate(15 260 100)" opacity="0.4"/>
-                    <ellipse cx="270" cy="300" rx="9" ry="5" fill="#8d6e63" transform="rotate(-40 270 300)" opacity="0.5"/>
+                    <ellipse cx="55" cy="190" rx="8" ry="5" fill="#8d6e63" transform="rotate(-20 55 190)" opacity="0.5"/>
+                    <ellipse cx="405" cy="110" rx="7" ry="4" fill="#8d6e63" transform="rotate(15 405 110)" opacity="0.4"/>
+                    <ellipse cx="410" cy="310" rx="9" ry="5" fill="#8d6e63" transform="rotate(-40 410 310)" opacity="0.45"/>
+                    <ellipse cx="185" cy="390" rx="6" ry="3.5" fill="#8d6e63" transform="rotate(25 185 390)" opacity="0.3"/>
                 </g>
-
-                <ellipse cx="160" cy="345" rx="70" ry="12" fill="#000" opacity="0.05"/>
             </svg>
 
             {{-- Price badge --}}
