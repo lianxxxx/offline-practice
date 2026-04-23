@@ -4,43 +4,42 @@
         @php
             $cardIdx = 0;
             $categories = [
-               [
-    'name'  => 'Espresso',
-    'label' => 'The Classics',
-    'items' => [
-['name' => 'The Grind Espresso', 'fill' => '#3d1f10', 'bg' => '#3d1f10', 'subtitle' => 'Double shot. Dark roast.',         'desc' => 'Dense, bitter, unapologetically strong. The shot that starts every session.',          'price' => '₱99',  'badge' => 'Most Ordered', 'tags' => ['Espresso', 'Bold',     'Classic']],
-['name' => 'Americano',          'fill' => '#6b4226', 'bg' => '#4a2c1a', 'subtitle' => 'Two shots over hot water.',        'desc' => 'No frills, no distractions. Just you, the work, and two clean shots.',                'price' => '₱109', 'badge' => null,           'tags' => ['Espresso', 'Clean',    'Light'  ]],
-['name' => 'Flat White',         'fill' => '#9e6b3a', 'bg' => '#9e6b3a', 'subtitle' => 'Ristretto shots, microfoam.',      'desc' => 'Smooth enough to sip slow. Strong enough to keep you going.',                        'price' => '₱129', 'badge' => null,           'tags' => ['Espresso', 'Creamy',   'Smooth' ]],
-['name' => 'Cortado',            'fill' => '#a0522d', 'bg' => '#7a3b1e', 'subtitle' => 'Equal parts, perfectly balanced.', 'desc' => 'Equal parts espresso and milk. Balanced for clarity and control.',   'price' => '₱109', 'badge' => 'Trending',           'tags' => ['Espresso', 'Balanced', 'Small'  ]],
-    ],
-],
-               [
-    'name'  => 'Cold Brew',
-    'label' => 'Cold & Slow',
-    'items' => [
-        ['name' => 'Cold Brew Overflow', 'fill' => '#c8956c', 'bg' => '#8f5f3f', 'subtitle' => '18-hour steep.',         'desc' => 'Steeped 18 hours in cold water. The go-to for late nights and long focus blocks.',  'price' => '₱129', 'badge' => 'Staff Pick', 'tags' => ['Cold', 'Smooth', 'Strong']],
-['name' => 'Nitro Cold Brew',    'fill' => '#6b4c1a', 'bg' => '#6b4c1a', 'subtitle' => 'Nitrogen-infused.',      'desc' => 'Nitrogen-charged and silky smooth. No dairy, no crash, just pure cold energy.',     'price' => '₱149', 'badge' => 'New',        'tags' => ['Cold', 'Creamy', 'Bold'  ]],
-['name' => 'Cold Brew Tonic',    'fill' => '#5c4a2a', 'bg' => '#5c4a2a', 'subtitle' => 'Cold brew meets tonic.', 'desc' => 'Cold brew over tonic with a citrus twist. Unexpected, yet addictive.', 'price' => '₱139', 'badge' => null,         'tags' => ['Cold', 'Citrus', 'Crisp' ]],
-    ],
-],
-             [
-    'name'  => 'Specialty',
-    'label' => 'Signatures',
-    'items' => [
-       ['name' => 'Matcha Hustle Latte', 'fill' => '#2d5a27', 'bg' => '#1a3d15', 'subtitle' => 'For the caffeine-curious.',   'desc' => 'Ceremonial matcha, oat milk, cinnamon. For when you are trying to be better.',     'price' => '₱119', 'badge' => 'Best Seller',  'tags' => ['Matcha',   'Creamy', 'Smooth']],
-['name' => 'Peppermint Mocha',    'fill' => '#4db87a', 'bg' => '#1a4a2e', 'subtitle' => 'Cool, bold, refreshing.',     'desc' => 'Espresso, peppermint, dark chocolate. Order this when you need a reset.',           'price' => '₱129', 'badge' => null,   'tags' => ['Espresso', 'Minty',  'Bold'  ]],
-['name' => 'Dirty Horchata',      'fill' => '#e8a0a0', 'bg' => '#8b3a3a', 'subtitle' => 'Espresso meets horchata.',    'desc' => 'Espresso over house made rice horchata. Weird choice. Always the right one.',       'price' => '₱129', 'badge' => 'Recommended',   'tags' => ['Espresso', 'Sweet',  'Unique']],
-['name' => 'Lavender Fog',        'fill' => '#9b8ec4', 'bg' => '#4a3f6b', 'subtitle' => 'Earl grey and lavender.',     'desc' => 'Earl grey, lavender, oat milk. You worked hard enough. Wind down.',                 'price' => '₱149', 'badge' => null,   'tags' => ['Tea',      'Floral', 'Calm'  ]],
-    ],
-],
+                [
+                    'name'  => 'Espresso',
+                    'label' => 'The Classics',
+                    'items' => [
+                        ['name' => 'The Grind Espresso', 'fill' => '#3d1f10', 'bg' => '#3d1f10', 'subtitle' => 'Double shot. Dark roast.',         'desc' => 'Dense, bitter, unapologetically strong. The shot that starts every session.',        'price' => '₱99',  'badge' => 'Most Ordered', 'tags' => ['Espresso', 'Bold',     'Classic']],
+                        ['name' => 'Americano',          'fill' => '#6b4226', 'bg' => '#4a2c1a', 'subtitle' => 'Two shots over hot water.',        'desc' => 'No frills, no distractions. Just you, the work, and two clean shots.',              'price' => '₱109', 'badge' => null,           'tags' => ['Espresso', 'Clean',    'Light'  ]],
+                        ['name' => 'Flat White',         'fill' => '#9e6b3a', 'bg' => '#9e6b3a', 'subtitle' => 'Ristretto shots, microfoam.',      'desc' => 'Smooth enough to sip slow. Strong enough to keep you going.',                      'price' => '₱129', 'badge' => null,           'tags' => ['Espresso', 'Creamy',   'Smooth' ]],
+                        ['name' => 'Cortado',            'fill' => '#a0522d', 'bg' => '#7a3b1e', 'subtitle' => 'Equal parts, perfectly balanced.', 'desc' => 'Equal parts espresso and milk. Balanced for clarity and control.',                  'price' => '₱109', 'badge' => 'Trending',     'tags' => ['Espresso', 'Balanced', 'Small'  ]],
+                    ],
+                ],
+                [
+                    'name'  => 'Cold Brew',
+                    'label' => 'Cold & Slow',
+                    'items' => [
+                        ['name' => 'Cold Brew Overflow', 'fill' => '#c8956c', 'bg' => '#8f5f3f', 'subtitle' => '18-hour steep.',         'desc' => 'Steeped 18 hours in cold water. The go-to for late nights and long focus blocks.', 'price' => '₱129', 'badge' => 'Staff Pick', 'tags' => ['Cold', 'Smooth', 'Strong']],
+                        ['name' => 'Nitro Cold Brew',    'fill' => '#6b4c1a', 'bg' => '#6b4c1a', 'subtitle' => 'Nitrogen-infused.',      'desc' => 'Nitrogen-charged and silky smooth. No dairy, no crash, just pure cold energy.',    'price' => '₱149', 'badge' => 'New',        'tags' => ['Cold', 'Creamy', 'Bold'  ]],
+                        ['name' => 'Cold Brew Tonic',    'fill' => '#5c4a2a', 'bg' => '#5c4a2a', 'subtitle' => 'Cold brew meets tonic.', 'desc' => 'Cold brew over tonic with a citrus twist. Unexpected, yet addictive.',             'price' => '₱139', 'badge' => null,         'tags' => ['Cold', 'Citrus', 'Crisp' ]],
+                    ],
+                ],
+                [
+                    'name'  => 'Specialty',
+                    'label' => 'Signatures',
+                    'items' => [
+                        ['name' => 'Matcha Hustle Latte', 'fill' => '#2d5a27', 'bg' => '#1a3d15', 'subtitle' => 'For the caffeine-curious.', 'desc' => 'Ceremonial matcha, oat milk, cinnamon. For when you are trying to be better.',   'price' => '₱119', 'badge' => 'Best Seller', 'tags' => ['Matcha',   'Creamy', 'Smooth']],
+                        ['name' => 'Peppermint Mocha',    'fill' => '#4db87a', 'bg' => '#1a4a2e', 'subtitle' => 'Cool, bold, refreshing.',     'desc' => 'Espresso, peppermint, dark chocolate. Order this when you need a reset.',       'price' => '₱129', 'badge' => null,          'tags' => ['Espresso', 'Minty',  'Bold'  ]],
+                        ['name' => 'Dirty Horchata',      'fill' => '#e8a0a0', 'bg' => '#8b3a3a', 'subtitle' => 'Espresso meets horchata.',    'desc' => 'Espresso over house made rice horchata. Weird choice. Always the right one.',    'price' => '₱129', 'badge' => 'Recommended', 'tags' => ['Espresso', 'Sweet',  'Unique']],
+                        ['name' => 'Lavender Fog',        'fill' => '#9b8ec4', 'bg' => '#4a3f6b', 'subtitle' => 'Earl grey and lavender.',     'desc' => 'Earl grey, lavender, oat milk. You worked hard enough. Wind down.',             'price' => '₱149', 'badge' => null,          'tags' => ['Tea',      'Floral', 'Calm'  ]],
+                    ],
+                ],
                 [
                     'name'  => 'Snacks',
                     'label' => 'Fuel Up',
-                    
                     'items' => [
-                      ['name' => 'Butter Croissant', 'fill' => '#e8c98a', 'bg' => '#8b6914', 'subtitle' => 'Freshly baked daily.',      'desc' => 'Flaky, warm, buttery. The kind you order when you finally deserve a break.',     'price' => '₱49',  'badge' => null,          'tags' => ['Baked',  'Buttery', 'Flaky'  ]],
-['name' => 'Banana Bread',     'fill' => '#d4a96a', 'bg' => '#7a5420', 'subtitle' => 'Dense, moist, chocolatey.',  'desc' => 'Dark chocolate chips, dense crumb. Order this when the work finally pays off.',  'price' => '₱79',  'badge' => null, 'tags' => ['Baked',  'Sweet',   'Rich'   ]],
-['name' => 'Avocado Toast',    'fill' => '#7ab648', 'bg' => '#4a7c3f', 'subtitle' => 'Sourdough and smashed avo.', 'desc' => 'Smashed avo on sourdough with chili flakes and lemon. Eat well, work better.',  'price' => '₱99', 'badge' => 'Customer Favorite',          'tags' => ['Savory', 'Fresh',   'Filling']],
+                        ['name' => 'Butter Croissant', 'fill' => '#e8c98a', 'bg' => '#8b6914', 'subtitle' => 'Freshly baked daily.',      'desc' => 'Flaky, warm, buttery. The kind you order when you finally deserve a break.',    'price' => '₱49', 'badge' => null,                'tags' => ['Baked',  'Buttery', 'Flaky'  ]],
+                        ['name' => 'Banana Bread',     'fill' => '#d4a96a', 'bg' => '#7a5420', 'subtitle' => 'Dense, moist, chocolatey.',  'desc' => 'Dark chocolate chips, dense crumb. Order this when the work finally pays off.', 'price' => '₱79', 'badge' => null,                'tags' => ['Baked',  'Sweet',   'Rich'   ]],
+                        ['name' => 'Avocado Toast',    'fill' => '#7ab648', 'bg' => '#4a7c3f', 'subtitle' => 'Sourdough and smashed avo.', 'desc' => 'Smashed avo on sourdough with chili flakes and lemon. Eat well, work better.',  'price' => '₱99', 'badge' => 'Customer Favorite', 'tags' => ['Savory', 'Fresh',   'Filling']],
                     ],
                 ],
             ];

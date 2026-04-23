@@ -1,36 +1,95 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
-         bootstrap="vendor/autoload.php"
-         colors="true"
->
-    <testsuites>
-        <testsuite name="Unit">
-            <directory>tests/Unit</directory>
-        </testsuite>
-        <testsuite name="Feature">
-            <directory>tests/Feature</directory>
-        </testsuite>
-    </testsuites>
-    <source>
-        <include>
-            <directory>app</directory>
-        </include>
-    </source>
-    <php>
-        <env name="APP_ENV" value="testing"/>
-        <env name="APP_MAINTENANCE_DRIVER" value="file"/>
-        <env name="BCRYPT_ROUNDS" value="4"/>
-        <env name="BROADCAST_CONNECTION" value="null"/>
-        <env name="CACHE_STORE" value="array"/>
-        <env name="DB_CONNECTION" value="sqlite"/>
-        <env name="DB_DATABASE" value=":memory:"/>
-        <env name="DB_URL" value=""/>
-        <env name="MAIL_MAILER" value="array"/>
-        <env name="QUEUE_CONNECTION" value="sync"/>
-        <env name="SESSION_DRIVER" value="array"/>
-        <env name="PULSE_ENABLED" value="false"/>
-        <env name="TELESCOPE_ENABLED" value="false"/>
-        <env name="NIGHTWATCH_ENABLED" value="false"/>
-    </php>
-</phpunit>
+# Grind — Coffee for Students & Hustlers
+
+A coffee shop landing page and menu built for late nights, deep focus, and the kind of quiet that gets things done.
+
+## Tech Stack
+
+- **Laravel 13** — backend framework
+- **Livewire v4** — fullstack components with SPA navigation
+- **Tailwind CSS v4** — utility-first styling with custom design tokens
+- **Vite 8** — asset bundling
+
+## Project Structure
+
+Follows a team-standard **Livewire Pages** architecture — every page section is its own Livewire component, even static ones.
+
+```
+app/Livewire/Pages/
+├── Home/
+│   ├── Index.php        ← Orchestrator (thin)
+│   ├── Hero.php
+│   ├── Features.php
+│   ├── Menu.php
+│   ├── Cta.php
+│   └── Contact.php      ← Interactive: form + mail
+└── Menu/
+    ├── Index.php        ← Orchestrator (thin)
+    ├── Hero.php
+    ├── Categories.php
+    └── Cta.php
+```
+
+**Why full-Livewire even for static sections?**
+- Any section can gain reactivity later without a refactor
+- Sections can be lazy-loaded for free (`<livewire:pages.home.hero lazy />`)
+- Clean separation: one PHP file for logic, one Blade file for markup
+
+## Features
+
+- SPA navigation via `wire:navigate.hover` — page transitions without full reloads
+- Scroll-aware navbar — transparent on top, dark on scroll
+- Contact form with Laravel Mail (`ContactMail` Mailable)
+- Google Maps embed for Bacnotan, La Union
+- Full menu page with categorized drink cards
+- Centralized design tokens in `app.css` — one source of truth for brand colors and fonts
+- Responsive layout — mobile and desktop
+
+## Design Tokens
+
+All brand colors are defined in `resources/css/app.css`:
+
+```css
+--color-grind-bg: #1a1a1a;
+--color-grind-surface: #222222;
+--color-grind-primary: #c8a97e;
+--color-grind-accent: #e8d5b7;
+--color-grind-text: #f5f0e8;
+--color-grind-muted: #6b6560;
+--color-grind-border: rgba(200, 169, 126, 0.15);
+--color-grind-page: #F8F8F8;
+```
+
+## Getting Started
+
+```bash
+git clone https://github.com/lianxxxx/offline-practice
+cd offline-practice
+
+composer install
+npm install
+
+cp .env.example .env
+php artisan key:generate
+
+php artisan serve
+npm run dev
+```
+
+## Mail Setup
+
+The contact form uses Laravel Mail. Configure your `.env`:
+
+```env
+MAIL_MAILER=smtp
+MAIL_HOST=your-mail-host
+MAIL_PORT=587
+MAIL_USERNAME=your-username
+MAIL_PASSWORD=your-password
+MAIL_FROM_ADDRESS=hello@grindcoffee.ph
+MAIL_FROM_NAME="Grind"
+```
+
+## Developer
+
+**Leyanne Mayo**
+[leyannemayo.vercel.app](https://leyannemayo.vercel.app) · [github.com/lianxxxx](https://github.com/lianxxxx) · [linkedin.com/in/leyanne-mayo](https://linkedin.com/in/leyanne-mayo)
