@@ -1,4 +1,4 @@
-FROM php:8.4-cli
+FROM php:8.4-apache
 
 RUN apt-get update && apt-get install -y \
     curl zip unzip git \
@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-WORKDIR /app
+WORKDIR /var/www/html
 COPY . .
 
 RUN composer install --no-dev --optimize-autoloader --no-scripts --no-interaction
@@ -16,5 +16,11 @@ RUN php artisan config:cache || true
 RUN php artisan route:cache || true
 RUN php artisan view:cache || true
 
-EXPOSE 8000
-CMD sh -c 'php artisan serve --host=0.0.0.0 --port=$PORT'
+RUN chown -R www-data:www-data /var/www/html/storage
+RUN a2enmod rewrite
+
+ENV APACHE_DOCUMENT_ROOT /var/www/html/public
+
+RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
+
+EXPOSE 80
