@@ -19,9 +19,10 @@
             Walk in, claim a seat, and let us handle the rest. Open late every day because the work doesn't stop at 9.
         </p>
 
-        <a href="{{ route('home') }}#contact" wire:navigate
+<a href="https://maps.google.com/maps?q=Bacnotan,+La+Union,+Philippines" target="_blank"
            class="inline-flex items-center gap-3 bg-grind-primary font-mono-grind text-xs text-grind-bg tracking-widest px-8 py-3.5 rounded-sm hover:-translate-y-0.5 transition-all duration-200 no-underline">
             Get Directions →
         </a>
     </div>
+    <div class="w-full h-px bg-grind-muted opacity-60 mt-20"></div>
 </section>
